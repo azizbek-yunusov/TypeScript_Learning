@@ -1,31 +1,44 @@
-// never functions
-function someFunc(c: string): never {
-  throw new Error(c)
+// TypeScript - Arrays, tuples, & Enums
+
+let a = []
+
+ a = [12, "aziz" , true]
+// 1 - usul
+ let b: number[] = [1, 2, 3]
+// 2 - usul
+ let c: Array<number> = [5, 6] 
+
+ // tuples
+
+ let f: [number, string, boolean]
+// type lar to'ldirrilmaguncha xatolik beradi
+ f= [12, "fff", true]
+
+ // Qayta hisoblasj - Enums
+
+ enum Gender {
+  Male,
+  Female
+ }
+
+ console.log(Gender.Female, Gender.Male);
+
+ enum Numbers {
+  A,
+  B =10,
+  C,
+ }
+
+ console.log(Numbers.A, Numbers.B, Numbers.C);
+//  0, 10,  11
+enum Strins {
+  A= "Hello",
+  C = "Bla bla",
+  D = ""
 }
-// xatolikga uchraganda
-
-
-// signature functions 
-let c: (x: number, y: string) => string
-
-c = function (a: number, b: string): string {
-  return `${b}: ${a}`
+const enum Olim {
+  A,
+  B,
 }
 
-console.log(c(2, "Javob"));
-
-// bu funksiya oldin tip beriladi va shu tip bo'yicha javob qaytaradi
-
-// function overloads
-function overloadFunc(x: number, y: number): number;
-function overloadFunc(x: string, y: number): string;
-function overloadFunc(x: any, y: any): any {
-  if (typeof x === "number" && typeof y === "number") {
-    return x + y
-  } else {
-    return `${x} and ${y}`
-  }
-}
-
-console.log(overloadFunc(13, 18));
-// Qo'shimcha tiplar berish
+console.log(Olim.A, Olim.B);
